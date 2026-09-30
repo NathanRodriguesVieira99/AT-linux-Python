@@ -1,6 +1,6 @@
 import time
 from multiprocessing import Pool
-from codigo.etapa_01_monte_carlo.monte_carlo_sequencial import monte_carlo_sequencial
+from codigo.etapa_01_monte_carlo.monte_carlo_serial import monte_carlo_serial
 from codigo.etapa_03_logging.logger import write_log_file
 
 
@@ -19,7 +19,7 @@ def monte_carlo_parallel(
     # Cada worker recebe um bloco com chunk_size
     with Pool(processes=n_tasks) as pool:
         results = pool.imap_unordered(
-            monte_carlo_sequencial,
+            monte_carlo_serial,
             [chunk_size] * n_tasks
         )
 

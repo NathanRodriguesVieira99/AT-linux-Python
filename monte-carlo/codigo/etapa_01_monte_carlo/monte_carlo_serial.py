@@ -1,10 +1,10 @@
 import random
 
 
-def monte_carlo_sequencial(samples: int) -> int:
+def monte_carlo_serial(samples: int):
     hits = 0
 
-    # Cada iteracao representa um ponto no quadrado [-1, 1] x [-1, 1].
+    # Cada iteracao no loop representa um ponto no quadrado.
     for _ in range(samples):
         x = random.uniform(-1, 1)
         y = random.uniform(-1, 1)
