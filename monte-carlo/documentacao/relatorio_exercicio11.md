@@ -11,9 +11,10 @@ Como rodar a versão serial
 python main_serial.py
 ```
 
-O número de processadores é 12 via `os.cpu_count()`, lembrando que são os processadores lógicos, nâo necessariamente a quantidade de núcleos físicos, vide o executor de tarefas.
+A máquina tem 12 CPUs lógicas (os.cpu_count()), que não correspondem necessariamente aos núcleos físicos. O número real de processos é definido pelo --n-tasks
 
 ![alt text](image-1.png)
+
 ![alt text](image-5.png)
 
 Calcula o numero total de amostras (n_tasks \* chunk_size) e começa a medir o tempo de execução via `time.perf_counter()`. Nessa função os pontos (hits) são gerados um por um via:
